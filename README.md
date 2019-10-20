@@ -27,11 +27,6 @@ The following command prints out the docker variables `docker-machine env --shel
 
 - `mvn clean install`
 
-# Integration tests
-
-The integration tests are executed automatically during the invocation of `mvn clean install`. </br> 
-The process ist contolled by the plugins docker-maven-plugin & maven-failsafe-plugin.
-
 # Execution
 
 Please execute the following:
@@ -42,3 +37,7 @@ Please execute the following:
 Please execute the following:
 - `mvn docker:stop`
 
+# Integration tests
+
+The test `com.fti.tis.service.endpoint.TisEndpointIntegrationTest` asserts the answer from the exposed endpoint `/tis/commit/title` 
+within the docker container. 
