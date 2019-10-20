@@ -8,21 +8,30 @@ service and in the end returns a title of a comic.
 The following endpoints are exposed:
 - swagger-ui under `/swagger-ui.html`
 - actuator under `/actuator`
-- tis comic rest endpoint under `/tis/commit/title`
+- tis restendpoint under `/tis/commit/title`
 
-It is recommended to call the tis rest service using the swagger-ui.
+The tis endpoint can be invoked using swagger-ui or just directly.
 
 # Configuration
 
 The `xkcd.host.url` can be configured in application.properties or overwritten using java system property.
-The `xkcd.host.url` originally points to `https://xkcd.com`
+The following command can be used in Docker in order to overwrite system property `xkcd.host.url`:
+
+`docker run -e "xkcd.host.url=https://newxkcd.com" -p 8080:8080 -d tis-service:${version}`
 
 # Installation steps
 
 In order to build the service please execute the following:
-- `mvn clean install`
-- set dockerHost variable in pom.xml 
+- ensure that the docker system variables are set on the local machine `docker-machine env --shell cmd default`
+- `mvn clean install docker:build`
 
 # Execution
 
+Please execute the following:
+- `mvn docker:start`
+
+# Termination
+
+Please execute the following:
+- `mvn docker:stop`
 
