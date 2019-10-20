@@ -33,7 +33,8 @@ public class TisEndpointTest {
     @Test
     public void getComicTitle_ComicTitleNotNull_NotEmpty() {
         //arrange
-        when(xkcdAdapter.getSummary()).thenReturn(new Summary.Builder().setTitle("hello").build());
+        final Summary summary = new Summary.Builder().setTitle("hello").build();
+        when(xkcdAdapter.getSummary()).thenReturn(summary);
         //act
         final ResponseEntity<String> result = testee.getComicTitle();
         //assert
