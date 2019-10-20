@@ -140,6 +140,10 @@
                                 <ports>
                                     <port>8080:8080</port>
                                 </ports>
+                                <wait>
+                                    <log>Completed initialization</log>
+                                    <time>45000</time>
+                                </wait>
                             </run>
                         </image>
                     </images>
