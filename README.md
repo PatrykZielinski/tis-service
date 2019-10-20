@@ -19,7 +19,7 @@ The following command can be used in Docker in order to overwrite system propert
 
 `docker run -e "xkcd.host.url=https://newxkcd.com" -p 8080:8080 -d tis-service:${version}`
 
-# Installation steps
+# Build
 
 In order to build the service please execute the following:
 -  set DOCKER_HOME & DOCKER_CERT_PATH system environment variables </br> 
@@ -36,7 +36,6 @@ Please execute the following:
 Please execute the following:
 - `mvn docker:stop`
 
-# Integration tests
+# Testing
 
-The test `com.fti.tis.service.endpoint.TisEndpointIntegrationTest` asserts the answer from the exposed endpoint `/tis/commit/title` 
-within the docker container. 
+The integration test `com.fti.tis.service.endpoint.TisEndpointIntegrationTest` validates the answer from the exposed endpoint `/tis/commit/title`.
