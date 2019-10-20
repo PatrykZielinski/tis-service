@@ -23,9 +23,14 @@ The following command can be used in Docker in order to overwrite system propert
 
 In order to build the service please execute the following:
 -  set DOCKER_HOME & DOCKER_CERT_PATH system environment variables </br> 
-Th following command prints out the docker variables `docker-machine env --shell cmd default`
+The following command prints out the docker variables `docker-machine env --shell cmd default`
 
-- `mvn clean install docker:build`
+- `mvn clean install`
+
+# Integration tests
+
+The integration tests are executed automatically during the invocation of `mvn clean install`. </br> 
+The process ist contolled by the plugins docker-maven-plugin & maven-failsafe-plugin.
 
 # Execution
 

@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.http.ResponseEntity;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -24,9 +25,9 @@ public class TisEndpointTest {
         //arrange
         when(xkcdAdapter.getSummary()).thenReturn(new Summary(null));
         //act
-        final String result = testee.getComicTitle();
+        final ResponseEntity<String> result = testee.getComicTitle();
         //assert
-        assertEquals("the title of today’s XKCD comic was: ", result);
+        assertEquals("the title of today’s XKCD comic was: ", result.getBody());
     }
 
     @Test
@@ -34,8 +35,8 @@ public class TisEndpointTest {
         //arrange
         when(xkcdAdapter.getSummary()).thenReturn(new Summary("hello"));
         //act
-        final String result = testee.getComicTitle();
+        final ResponseEntity<String> result = testee.getComicTitle();
         //assert
-        assertEquals("the title of today’s XKCD comic was: hello", result);
+        assertEquals("the title of today’s XKCD comic was: hello", result.getBody());
     }
 }
