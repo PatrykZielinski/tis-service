@@ -23,7 +23,7 @@ public class TisEndpointTest {
     @Test
     public void getComicTitle_ComicTitleNull_Empty() {
         //arrange
-        when(xkcdAdapter.getSummary()).thenReturn(new Summary(null));
+        when(xkcdAdapter.getSummary()).thenReturn(new Summary());
         //act
         final ResponseEntity<String> result = testee.getComicTitle();
         //assert
@@ -33,7 +33,7 @@ public class TisEndpointTest {
     @Test
     public void getComicTitle_ComicTitleNotNull_NotEmpty() {
         //arrange
-        when(xkcdAdapter.getSummary()).thenReturn(new Summary("hello"));
+        when(xkcdAdapter.getSummary()).thenReturn(new Summary.Builder().setTitle("hello").build());
         //act
         final ResponseEntity<String> result = testee.getComicTitle();
         //assert

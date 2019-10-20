@@ -21,7 +21,7 @@ public class XkcdAdapterTest {
     @Test
     public void getSummary_ServiceReturnsTitle_Title() {
         //arrange
-        final Summary expectedSummary = new Summary("hello");
+        final Summary expectedSummary = new Summary.Builder().setTitle("hello").build();
         when(restTemplate.getForObject("/info.0.json", Summary.class)).thenReturn(expectedSummary);
         //act
         final Summary result = testee.getSummary();

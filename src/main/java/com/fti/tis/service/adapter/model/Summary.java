@@ -4,16 +4,20 @@ public class Summary {
 
     private String title;
 
-    public Summary() {
-        // default constructor for json deserialization
-    }
-
-    public Summary(final String title) {
-        this.title = title;
-    }
-
     public String getTitle() {
         return title;
     }
 
+    public static class Builder {
+        private Summary instance = new Summary();
+
+        public Builder setTitle(final String title) {
+            instance.title = title;
+            return this;
+        }
+
+        public Summary build() {
+            return instance;
+        }
+    }
 }
