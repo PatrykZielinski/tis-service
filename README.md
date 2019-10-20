@@ -22,7 +22,9 @@ The following command can be used in Docker in order to overwrite system propert
 # Installation steps
 
 In order to build the service please execute the following:
-- ensure that the docker system variables are set on the local machine `docker-machine env --shell cmd default`
+-  set DOCKER_HOME & DOCKER_CERT_PATH system environment variables </br> 
+Th following command prints out the docker variables `docker-machine env --shell cmd default`
+
 - `mvn clean install docker:build`
 
 # Execution
